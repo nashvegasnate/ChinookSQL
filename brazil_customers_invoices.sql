@@ -3,7 +3,8 @@
 --The resultant table should show the customer's full name, Invoice ID, 
 --Date of the invoice and billing country.
 
-SELECT firstName, lastName, customerId, country
-FROM Customer
-WHERE Country != 'USA'
+SELECT firstName, lastName, invoiceId, invoiceDate, billingCountry
+FROM Invoice
+JOIN Customer on Customer.CustomerId = Invoice.CustomerId
+WHERE BillingCountry = 'Brazil'
 
